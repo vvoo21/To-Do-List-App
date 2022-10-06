@@ -81,6 +81,10 @@ main {
   list-style: none;
 }
 
+#checkbox {
+  cursor: pointer;
+}
+
 .edit-task {
   width: 100%;
   outline: none;
@@ -99,8 +103,31 @@ main {
   border: none;
   background-color: #dedcdf;
   border-radius: 0 0 20px 20px;
+  color: #000;
   font-size: 1rem;
   text-align: center;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.clear-tasks-btn:hover {
+  background-color: #f4a6d7;
+}
+
+@media screen and (min-width: 768px) {
+  header, 
+  main {
+    width: 55%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #new-task, 
+  .edit-task,
+  .clear-tasks-btn {
+    font-size: 1.2rem;
+  }
 }
 
