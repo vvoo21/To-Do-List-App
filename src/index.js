@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
     const todo = {
       content: e.target.elements.content.value,
       done: false,
-      id: new Date().getTime()
+      id: todos.length + 1
     }
 
     //Global variable = todos
@@ -21,8 +21,8 @@ window.addEventListener('load', () => {
 
     localStorage.setItem('todos', JSON.stringify(todos));
 
-    e.target.reset() 
-
+    e.target.reset()
+ 
     DisplayTodos();
   })
 

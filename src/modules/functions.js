@@ -1,4 +1,5 @@
 import {todos} from '../index.js';
+import strRemove from './strRemove.js';
 
 export default function DisplayTodos() {
     const todoList = document.querySelector('#todo-list-wrap');
@@ -53,10 +54,9 @@ export default function DisplayTodos() {
       });
   
       removeBtn.addEventListener('click', e => {
-        todos = todos.filter(t => t !== todo);
-        localStorage.setItem('todos', JSON.stringify(todos));
-        DisplayTodos();
-
+        strRemove.todo(todo.id);
+        console.log(e.target.parentElement.parentElement);
+        e.target.parentElement.parentElement.remove();
       });  
 
     });
