@@ -4,6 +4,6 @@ const setIds = () => {
     todo.id = index + 1;
   });
   localStorage.setItem('todos', JSON.stringify(todos));
-}
+};
 
 export default setIds;
