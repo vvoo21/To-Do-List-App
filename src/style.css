@@ -29,15 +29,6 @@ body {
   /* color: var(--dark); */
 }
 
-input:not([type="radio"]):not([type="checkbox"]),
-button {
-  appearance: none;
-  border: none;
-  outline: none;
-  background: none;
-  cursor: initial;
-}
-
 main {
   width: 70%;
   display: flex;
@@ -62,7 +53,7 @@ section {
 .greeting .tittle {
   display: flex;
   color: var(--dark);
-  font-size: 1.5rm;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -75,15 +66,22 @@ section {
 .create-todo input {
   display: flex;
   width: 100%;
-  font-size: 1.125rem;
-  padding: 1rem 1.5 rem;
+  padding: 1rem 1.5rem;
   margin-right: 0.5rem;
   color: var(--dark);
   background-color: #fff;
   box-shadow: var(--shadow);
-  color: var(--dark);
   font-style: italic;
   font-size: 1.1rem;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
 }
 
 input[type="checkbox"] {
@@ -108,7 +106,7 @@ input[type="checkbox"] {
   height: 0;
   background-color: var(--primary);
   border-radius: 50%;
-  transition: 0.5 ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 input:checked ~ .bubble::after {
@@ -174,6 +172,21 @@ input:checked ~ .bubble::after {
   align-items: center;
 }
 
+.todo-list button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--grey);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #c7c7c7;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
 .todo-item .actions button {
   display: flex;
   padding: 0.5rem;
@@ -182,9 +195,8 @@ input:checked ~ .bubble::after {
   transition: 0.2s ease-in-out;
 }
 
-.todo-item .actions button:hover {
+.todo-list button:hover {
   background-color: var(--light);
-  color: var(--dark);
 }
 
 .todo-item .actions .edit {
@@ -203,23 +215,9 @@ input:checked ~ .bubble::after {
   color: var(--grey);
 }
 
-.todo-list button {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  border: 1px solid var(--grey);
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  color: var(--dark);
-  font-size: 1rem;
-  font-weight: 500;
-  background-color: #c7c7c7;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
-
-.todo-list button:hover {
+.todo-item .actions button:hover {
   background-color: var(--light);
+  color: var(--dark);
 }
 
 @media screen and (min-width: 768px) {
