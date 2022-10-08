@@ -1,14 +1,28 @@
-import _ from 'lodash';
 import './style.css';
+import DisplayTodos from './modules/functions.js';
 
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, now imported by this script
-    element.innerHTML = _.join(['I', 'am', 'from', 'Colombia'], ' ');
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
-  
+window.addEventListener('load', () => {
+  const todos = JSON.parse(localStorage.getItem('todos')) || [];
+  const newTodoForm = document.querySelector('#new-todo-form');
+
+  newTodoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const todo = {
+      content: e.target.elements.content.value,
+      done: false,
+      id: todos.length + 1,
+    };
+
+    // Global variable = todos
+    todos.push(todo);
+
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+    e.target.reset();
+
+    DisplayTodos();
+  });
+
+  DisplayTodos();
+});
