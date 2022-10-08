@@ -8,7 +8,7 @@ export default function DisplayTodos() {
 
   todos.forEach((todo) => {
     const todoItem = document.createElement('div');
-    todoItem.classList.add('todo-item');
+    todoItem.classList.add('todo-item', todo.done? 'done': 'a');
 
     const label = document.createElement('label');
     const input = document.createElement('input');
@@ -48,6 +48,7 @@ export default function DisplayTodos() {
       } else {
         todoItem.classList.remove('done')
       }
+      
     });
 
     editBtn.addEventListener('click', () => {
@@ -68,3 +69,10 @@ export default function DisplayTodos() {
     });
   });
 }
+
+const clearBtn = document.querySelector('.clear-all');
+
+clearBtn.addEventListener('click', () => {
+  strRemove.allCompleted();
+  DisplayTodos();
+});
