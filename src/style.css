@@ -21,7 +21,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--light);
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, #3f5efb 0%, rgba(252, 70, 107, 1) 100%);
+
+  /* background: var(--light); */
+
+  /* color: var(--dark); */
 }
 
 main {
@@ -63,9 +68,9 @@ section {
   width: 100%;
   padding: 1rem 1.5rem;
   margin-right: 0.5rem;
+  color: var(--dark);
   background-color: #fff;
   box-shadow: var(--shadow);
-  color: var(--dark);
   font-style: italic;
   font-size: 1.1rem;
 }
@@ -167,11 +172,6 @@ input:checked ~ .bubble::after {
   align-items: center;
 }
 
-.todo-item.done .todo-content input {
-  text-decoration: line-through;
-  color: var(--grey);
-}
-
 .todo-list button {
   width: 100%;
   display: flex;
@@ -197,6 +197,22 @@ input:checked ~ .bubble::after {
 
 .todo-list button:hover {
   background-color: var(--light);
+}
+
+.todo-item .actions .edit {
+  margin-right: 0.5rem;
+  background-color: #fcb0c3;
+  color: var(--dark);
+}
+
+.todo-item .actions .remove {
+  background-color: var(--danger);
+  color: var(--dark);
+}
+
+.todo-item.done .todo-content input {
+  text-decoration: line-through;
+  color: var(--grey);
 }
 
 .todo-item .actions button:hover {
