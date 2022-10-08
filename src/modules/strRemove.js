@@ -13,7 +13,7 @@ const strRemove = {
     const newToDos = todos.filter((todo) => todo.done === false);
     localStorage.setItem('todos', JSON.stringify(newToDos));
     setIds();
-  }
+  },
 };
 
 export default strRemove;
