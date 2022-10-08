@@ -40,6 +40,16 @@ export default function DisplayTodos() {
     actions.appendChild(editBtn);
     actions.appendChild(removeBtn);
 
+    input.addEventListener('change', () =>{
+      todo.done = !todo.done;
+      localStorage.setItem('todos', JSON.stringify(todos));
+      if(todo.done){
+        todoItem.classList.add('done');
+      } else {
+        todoItem.classList.remove('done')
+      }
+    });
+
     editBtn.addEventListener('click', () => {
       const inpunt = content.querySelector('input');
       inpunt.removeAttribute('readonly');
