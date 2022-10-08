@@ -13,8 +13,7 @@
 
 ## Live Demo (if available)
 
-- Live Site URL: [See Demo](https://vvoo21.github.io/To-Do-List-App/)
-
+- Live Site URL: [See Demo](https://vvoo21.github.io/To-Do-List-App/dist/)
 
 ## Getting Started
 
