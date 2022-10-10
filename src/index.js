@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
       done: false,
       id: todos.length + 1,
     };
-    
+
     todos.push(todo);
 
     localStorage.setItem('todos', JSON.stringify(todos));
