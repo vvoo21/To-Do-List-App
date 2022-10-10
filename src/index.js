@@ -13,8 +13,7 @@ window.addEventListener('load', () => {
       done: false,
       id: todos.length + 1,
     };
-
-    // Global variable = todos
+    
     todos.push(todo);
 
     localStorage.setItem('todos', JSON.stringify(todos));
