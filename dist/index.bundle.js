@@ -115,7 +115,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/functions.js */ \"./src/modules/functions.js\");\n\n\n\nwindow.addEventListener('load', () => {\n  const todos = JSON.parse(localStorage.getItem('todos')) || [];\n  const newTodoForm = document.querySelector('#new-todo-form');\n\n  newTodoForm.addEventListener('submit', (e) => {\n    e.preventDefault();\n\n    const todo = {\n      content: e.target.elements.content.value,\n      done: false,\n      id: todos.length + 1,\n    };\n\n    todos.push(todo);\n\n    localStorage.setItem('todos', JSON.stringify(todos));\n\n    e.target.reset();\n\n    (0,_modules_functions_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  });\n\n  (0,_modules_functions_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n});\n\n\n//# sourceURL=webpack://to-do-list-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_functions_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/functions.js */ \"./src/modules/functions.js\");\n/* harmony import */ var _modules_addTodo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addTodo.js */ \"./src/modules/addTodo.js\");\n\n\n\n\nwindow.addEventListener('load', () => {\n  const newTodoForm = document.querySelector('#new-todo-form');\n\n  newTodoForm.addEventListener('submit', _modules_addTodo_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n  (0,_modules_functions_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n});\n\n\n//# sourceURL=webpack://to-do-list-app/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/addTodo.js":
+/*!********************************!*\
+  !*** ./src/modules/addTodo.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./functions.js */ \"./src/modules/functions.js\");\n\n\nconst addTodo = (e) => {\n  e.preventDefault();\n\n  const todos = JSON.parse(localStorage.getItem('todos')) || [];\n\n  const todo = {\n    content: e.target.elements.content.value,\n    done: false,\n    id: todos.length + 1,\n  };\n\n  todos.push(todo);\n\n  localStorage.setItem('todos', JSON.stringify(todos));\n\n  e.target.reset();\n\n  (0,_functions_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addTodo);\n\n//# sourceURL=webpack://to-do-list-app/./src/modules/addTodo.js?");
 
 /***/ }),
 
